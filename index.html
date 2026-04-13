@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votação | Conselho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Eleição do Conselho</h1>
+        <p class="subtitle">Clique no candidato para computar o voto</p>
+    </header>
+
+    <div class="grid" id="grid-candidatos">
+        </div>
+
+    <section class="ranking-section">
+        <div class="ranking-header">
+            <h2>📊 Classificação em Tempo Real</h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Candidato</th>
+                    <th>Votos</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-ranking">
+                </tbody>
+        </table>
+    </section>
+
+    <footer class="controles">
+        <button class="btn-reset" onclick="resetarVotos()">Zerar Banco de Dados</button>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+
+<div id="modal-confirmacao" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Confirmar Voto?</h3>
+        <p>Você está votando em:</p>
+        <h2 id="nome-candidato-modal">Nome do Candidato</h2>
+        <div class="modal-buttons">
+            <button class="btn-cancelar" onclick="fecharModal()">Corrigir</button>
+            <button class="btn-confirmar" id="confirmar-voto-final" onclick="confirmarVoto()">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
