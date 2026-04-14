@@ -14,6 +14,7 @@ const dadosIniciais = [
 let candidatoSelecionadoId = null;
 let candidatos = JSON.parse(localStorage.getItem('votos_conselho')) || 
                 dadosIniciais.map(c => ({ ...c, votos: 0 }));
+                
 
 function salvar() {
     localStorage.setItem('votos_conselho', JSON.stringify(candidatos));
@@ -88,7 +89,7 @@ function desenharCards() {
                 </div>
                 <div class="info">
                     <strong>${c.nome}</strong>
-                    <button class="btn-voto" onclick="votar(${c.id})">Votar</button>
+                    <button class="btn-voto" onclick="votar(${c.id})">Confirmar Candidato</button>
                 </div>
             </div>`;
     });
